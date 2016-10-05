@@ -53,7 +53,7 @@ let testAssemblies = "tests/**/bin/Release/*Tests*.dll"
 // Git configuration (used for publishing documentation in gh-pages branch)
 // The profile where the project is posted
 let gitOwner = "Arthyon"
-let gitHome = sprintf "%s/%s" "https://github.com/Arthyon/Creuna.FluidImages" gitOwner
+let gitHome = sprintf "%s/%s" "https://github.com" gitOwner
 
 // The name of the project on GitHub
 let gitName = "Creuna.FluidImages"
