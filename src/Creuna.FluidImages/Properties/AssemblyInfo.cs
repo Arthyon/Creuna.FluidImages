@@ -4,11 +4,11 @@ using System.Reflection;
 [assembly: AssemblyTitleAttribute("Creuna.FluidImages")]
 [assembly: AssemblyProductAttribute("Creuna.FluidImages")]
 [assembly: AssemblyDescriptionAttribute("An EPiServer plugin enabling editors to set the focus point of an image")]
-[assembly: AssemblyVersionAttribute("1.0")]
-[assembly: AssemblyFileVersionAttribute("1.0")]
+[assembly: AssemblyVersionAttribute("0.0.1")]
+[assembly: AssemblyFileVersionAttribute("0.0.1")]
 namespace System {
     internal static class AssemblyVersionInformation {
-        internal const string Version = "1.0";
-        internal const string InformationalVersion = "1.0";
+        internal const string Version = "0.0.1";
+        internal const string InformationalVersion = "0.0.1";
     }
 }

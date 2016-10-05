@@ -20,7 +20,8 @@ tags
 summary
     An EPiServer plugin enabling editors to set the focus point of an image
 description
-    Description not set
+    Used to create an image that covers an area, always keeping the subject within the area, independent of container dimensions.
+	When an editor sets the focus point of an image, the x and y percentage coordinates of the focus point should be added to the fluid-image element as background-position in an inline style.
 files
 	modules ==> content
 	bin/debug/Creuna.FluidImages.dll ==> lib/net45/
