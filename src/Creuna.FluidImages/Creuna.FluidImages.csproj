@@ -49,6 +49,7 @@
   <ItemGroup>
     <None Include="modules\_protected\Creuna.FluidImages\module.config" />
     <None Include="paket.references" />
+    <None Include="paket.template" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="modules\_protected\Creuna.FluidImages\ClientResources\ImageFocusPointEditor.js" />

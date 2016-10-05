@@ -7,7 +7,7 @@
 Creuna.FluidImages
 ======================
 
-Documentation
+An EPiServer plugin enabling editors to set the focus point of an image
 
 <div class="row">
   <div class="span1"></div>
