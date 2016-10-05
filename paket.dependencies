@@ -1,0 +1,22 @@
+source https://nuget.org/api/v2
+source http://nuget.episerver.com/feed/packages.svc/
+
+
+nuget FSharp.Core redirects: force 
+nuget EPiServer.CMS.Core
+
+group Build
+  source https://nuget.org/api/v2
+
+  nuget SourceLink.Fake
+  nuget FAKE
+  nuget FSharp.Formatting
+
+  github fsharp/FAKE modules/Octokit/Octokit.fsx
+
+group Test
+  source https://nuget.org/api/v2
+  
+  nuget FSharp.Core redirects: force 
+  nuget NUnit ~> 2
+  nuget NUnit.Runners ~> 2

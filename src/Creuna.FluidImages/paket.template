@@ -1,0 +1,32 @@
+type project
+title
+    Creuna.FluidImages
+owners
+    Creuna AS
+authors 
+    Creuna AS
+projectUrl
+	https://github.com/Arthyon/Creuna.FluidImages
+iconUrl
+    https://raw.githubusercontent.com/Arthyon/Creuna.FluidImages/master/docs/files/img/logo.png
+licenseUrl
+  https://github.com/Arthyon/Creuna.FluidImages
+requireLicenseAcceptance
+    false
+copyright
+    Copyright 2016
+tags
+    EPiServer
+summary
+    An EPiServer plugin enabling editors to set the focus point of an image
+description
+    Description not set
+files
+	modules ==> content
+	bin/debug/Creuna.FluidImages.dll ==> lib/net45/
+frameworkAssemblies
+	System.Web.Extensions
+dependencies
+	EPiServer.CMS.core >= 9.0.0
+
+
