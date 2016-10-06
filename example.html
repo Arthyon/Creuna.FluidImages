@@ -61,7 +61,16 @@ An img tag should also be included to maintain accessibility.</p>
   opacity: 0;
 }
 </code></pre></td></tr></table>
-<p>We are using <a href="style/fluidStyle.css">this CSS</a> with some additional styling to get the following examples to work.</p>
+<p>Then set the background-position using the <em>Creuna.FluidImages.PercentageCoordinates</em>-property in your ImageFile-class:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip"><code lang="razor">&lt;div class="fluid-image" style="background-image: url(@Url.ContentUrl(Model)); background-position: @image.X% @image.Y%;"&gt;
+    &lt;img src="@Url.ContentUrl(Model)" alt="Alt text"&gt;
+&lt;/div&gt;
+</code></pre></td></tr></table>
+<p>We are using <a href="style/fluidStyle.css">this CSS</a> with some additional styling to get the following examples to work:</p>
 <div class="demo-fluid-container">
 	<img src="img/table.jpg" alt="" class="demo-reference">
 	<div class="demo-image-container-wide">
