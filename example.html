@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Creuna.FluidImages
+    <title>Example Usage
 </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="An EPiServer plugin enabling editors to set the focus point of an image"/>
@@ -33,27 +33,54 @@
       <div class="row">
         <div class="span9" id="main">
           
-<h1><a name="Creuna-FluidImages" class="anchor" href="#Creuna-FluidImages">Creuna.FluidImages</a></h1>
-<p>An EPiServer plugin enabling editors to set the focus point of an image.</p>
-<p>Used to create an image that covers an area, always keeping the subject within the area, independent of container dimensions.</p>
-<h2><a name="Getting-Started" class="anchor" href="#Getting-Started">Getting Started</a></h2>
-<p>This example demonstrates how to enable the editor for a property.
-To use the editor you need to define an image file inheriting from ImageData.</p>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-<span class="l">2: </span>
-<span class="l">3: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="csharp">[ContentType(GUID <span class="o">=</span> <span class="s">"0A89E464-56D4-449F-AEA8-2BF774AB8730"</span>)]
-[MediaDescriptor(ExtensionString <span class="o">=</span> <span class="s">"jpg,jpeg,jpe,ico,gif,bmp,png"</span>)]
-<span class="k">public</span> <span class="k">class</span> ImageFile <span class="o">:</span> ImageData, IFileProperties
-</code></pre></td></tr></table>
-<p>Then you can add the focus point property to this class, using the type <em>Creuna.FluidImages.PercentageCoordinates</em>:</p>
-<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
-</pre></td>
-<td class="snippet"><pre class="fssnip highlighted"><code lang="csharp"><span class="k">public</span> <span class="k">virtual</span> PercentageCoordinates FocusPoint { get; set; }
-</code></pre></td></tr></table>
-<p>This class contains two properties, X and Y, which are the coordinates of the chosen focus point in percent of the image size.
-See <a href="example.html">Example Usage</a> for suggestions on how to use the focus point in the frontend.</p>
+<h1><a name="Example-Usage" class="anchor" href="#Example-Usage">Example Usage</a></h1>
+<p>When an editor sets the focus point of an image, the x and y percentage coordinates of the focus point can be added to the fluid-image element as background-position in an inline style.
+An img tag should also be included to maintain accessibility.</p>
+<p>We are using <a href="style/fluidStyle.css">this CSS</a> to get these examples to work.</p>
+<p><main class="content-container">
+<div class="fluid-container">
+<img src="img/table.jpg" alt="" class="reference">
+<div class="image-container-wide">
+<div class="image" style="background-image: url(img/table.jpg); background-position: 25% 50%;">
+<img src="img/table.jpg" alt="Table">
+</div>
+</div>
+<div class="image-container-square">
+<div class="image" style="background-image: url(img/table.jpg); background-position: 25% 50%;">
+<img src="img/table.jpg" alt="Table">
+</div>
+</div>
+<div class="image-container-tall">
+<div class="image" style="background-image: url(img/table.jpg); background-position: 25% 50%;">
+<img src="img/table.jpg" alt="Table">
+</div>
+</div>
+</div>
+<pre>
+<a href="https://www.flickr.com/photos/145562044@N06/29850627310/" target="_blank">Photo</a> by <a href="https://www.flickr.com/photos/145562044@N06/" target="_blank">tagcoor 10<em>2</a> is licensed under &lt;a href="<a href="https://creativecommons.org/licenses/by/2.0/"">https://creativecommons.org/licenses/by/2.0/"</a> target="</em>blank"&gt;CC BY 2.0</a>
+</pre></p>
+<p><div class="fluid-container">
+<img src="img/portrait.jpg" alt="" class="reference">
+<div class="image-container-wide">
+<div class="image" style="background-image: url(img/portrait.jpg); background-position: 80% 20%;">
+<img src="img/portrait.jpg" alt="portrait">
+</div>
+</div>
+<div class="image-container-square">
+<div class="image" style="background-image: url(img/portrait.jpg); background-position: 80% 20%;">
+<img src="img/portrait.jpg" alt="portrait">
+</div>
+</div>
+<div class="image-container-tall">
+<div class="image" style="background-image: url(img/portrait.jpg); background-position: 80% 20%;">
+<img src="img/portrait.jpg" alt="portrait">
+</div>
+</div>
+</div>
+<pre>
+<a href="https://www.flickr.com/photos/144880903@N08/29518211673/" target="_blank">Photo</a> by <a href="https://www.flickr.com/photos/144880903@N08/" target="_blank">cff 5<em>2</a> is licensed under &lt;a href="<a href="https://creativecommons.org/licenses/by/2.0/"">https://creativecommons.org/licenses/by/2.0/"</a> target="</em>blank"&gt;CC BY 2.0</a>
+</pre></p>
+</main>
 
 
         </div>
