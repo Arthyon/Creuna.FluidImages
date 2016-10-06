@@ -52,6 +52,5 @@ GITHUB
 GROUP Test
 NUGET
   remote: https://www.nuget.org/api/v2
-    FSharp.Core (4.0.0.1) - redirects: force
     NUnit (2.6.4)
     NUnit.Runners (2.6.4)

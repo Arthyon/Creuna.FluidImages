@@ -263,7 +263,15 @@ Target "GenerateHelpDebug" (fun _ ->
 
 Target "KeepRunning" (fun _ ->
     use watcher = !! "docs/content/**/*.*" |> WatchChanges (fun changes ->
-         generateHelp' true true
+        DeleteFile "docs/content/release-notes.md"
+        CopyFile "docs/content/" "RELEASE_NOTES.md"
+        Rename "docs/content/release-notes.md" "docs/content/RELEASE_NOTES.md"
+
+        DeleteFile "docs/content/license.md"
+        CopyFile "docs/content/" "LICENSE.txt"
+        Rename "docs/content/license.md" "docs/content/LICENSE.txt"
+//        generateHelp' true true
+        generateHelp true
     )
 
     traceImportant "Waiting for help edits. Press any key to stop."
@@ -373,7 +381,7 @@ Target "All" DoNothing
   ==> "Build"
   ==> "CopyBinaries"
   ==> "RunTests"
-  ==> "GenerateReferenceDocs"
+//  ==> "GenerateReferenceDocs"
   ==> "GenerateDocs"
 #if MONO
 #else
@@ -385,7 +393,7 @@ Target "All" DoNothing
   =?> ("ReleaseDocs",isLocalBuild)
 
 "GenerateHelp"
-  ==> "GenerateReferenceDocs"
+//  ==> "GenerateReferenceDocs"
   ==> "GenerateDocs"
 
 "GenerateHelpDebug"

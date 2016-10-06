@@ -17,6 +17,5 @@ group Build
 group Test
   source https://nuget.org/api/v2
   
-  nuget FSharp.Core redirects: force 
   nuget NUnit ~> 2
   nuget NUnit.Runners ~> 2
