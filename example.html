@@ -36,22 +36,42 @@
 <h1><a name="Example-Usage" class="anchor" href="#Example-Usage">Example Usage</a></h1>
 <p>When an editor sets the focus point of an image, the x and y percentage coordinates of the focus point can be added to the fluid-image element as background-position in an inline style.
 An img tag should also be included to maintain accessibility.</p>
-<p>We are using <a href="style/fluidStyle.css">this CSS</a> to get these examples to work.</p>
-<main class="content-container">
-<div class="fluid-container">
-	<img src="img/table.jpg" alt="" class="reference">
-	<div class="image-container-wide">
-		<div class="image" style="background-image: url(img/table.jpg); background-position: 25% 50%;">
+<p>The CSS that is needed to make this work is this:
+[lang=css]
+.fluid-image {
+height: 100%;
+overflow: hidden;
+background-size: cover;
+}</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="o">.</span><span class="i">fluid</span><span class="o">-</span><span class="i">image</span> <span class="i">img</span> {
+	<span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">min</span><span class="o">-</span><span class="i">width</span><span class="o">:</span> <span class="n">100</span><span class="o">%</span>;
+	<span onmouseout="hideTip(event, 'fs1', 2)" onmouseover="showTip(event, 'fs1', 2)" class="i">min</span><span class="o">-</span><span class="i">height</span><span class="o">:</span> <span class="n">100</span><span class="o">%</span>;
+	<span class="i">opacity</span><span class="o">:</span> <span class="n">0</span>;
+}
+</code></pre></td>
+</tr>
+</table>
+<p>We are using <a href="style/fluidStyle.css">this CSS</a> with some additional styling to get the following examples to work.</p>
+<div class="demo-fluid-container">
+	<img src="img/table.jpg" alt="" class="demo-reference">
+	<div class="demo-image-container-wide">
+		<div class="fluid-image" style="background-image: url(img/table.jpg); background-position: 25% 50%;">
 			<img src="img/table.jpg" alt="Table">
 		</div>
 	</div>
-	<div class="image-container-square">
-		<div class="image" style="background-image: url(img/table.jpg); background-position: 25% 50%;">
+	<div class="demo-image-container-square">
+		<div class="fluid-image" style="background-image: url(img/table.jpg); background-position: 25% 50%;">
 			<img src="img/table.jpg" alt="Table">
 		</div>
 	</div>
-	<div class="image-container-tall">
-		<div class="image" style="background-image: url(img/table.jpg); background-position: 25% 50%;">
+	<div class="demo-image-container-tall">
+		<div class="fluid-image" style="background-image: url(img/table.jpg); background-position: 25% 50%;">
 			<img src="img/table.jpg" alt="Table">
 		</div>
 	</div>
@@ -59,20 +79,20 @@ An img tag should also be included to maintain accessibility.</p>
 <p><pre>
 <a href="https://www.flickr.com/photos/145562044@N06/29850627310/" target="_blank">Photo</a> by <a href="https://www.flickr.com/photos/145562044@N06/" target="_blank">tagcoor 10_2</a> is licensed under <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>
 </pre></p>
-<p><div class="fluid-container">
-<img src="img/portrait.jpg" alt="" class="reference">
-<div class="image-container-wide">
-<div class="image" style="background-image: url(img/portrait.jpg); background-position: 80% 20%;">
+<p><div class="demo-fluid-container">
+<img src="img/portrait.jpg" alt="" class="demo-reference">
+<div class="demo-image-container-wide">
+<div class="fluid-image" style="background-image: url(img/portrait.jpg); background-position: 80% 20%;">
 <img src="img/portrait.jpg" alt="portrait">
 </div>
 </div>
-<div class="image-container-square">
-<div class="image" style="background-image: url(img/portrait.jpg); background-position: 80% 20%;">
+<div class="demo-image-container-square">
+<div class="fluid-image" style="background-image: url(img/portrait.jpg); background-position: 80% 20%;">
 <img src="img/portrait.jpg" alt="portrait">
 </div>
 </div>
-<div class="image-container-tall">
-<div class="image" style="background-image: url(img/portrait.jpg); background-position: 80% 20%;">
+<div class="demo-image-container-tall">
+<div class="fluid-image" style="background-image: url(img/portrait.jpg); background-position: 80% 20%;">
 <img src="img/portrait.jpg" alt="portrait">
 </div>
 </div>
@@ -80,8 +100,8 @@ An img tag should also be included to maintain accessibility.</p>
 <pre>
 <a href="https://www.flickr.com/photos/144880903@N08/29518211673/" target="_blank">Photo</a> by <a href="https://www.flickr.com/photos/144880903@N08/" target="_blank">cff 5_2</a> is licensed under <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>
 </pre></p>
-</main>
 
+<div class="tip" id="fs1">val min : e1:&#39;T -&gt; e2:&#39;T -&gt; &#39;T (requires comparison)<br /><br />Full name: Microsoft.FSharp.Core.Operators.min</div>
 
         </div>
         <div class="span3">
