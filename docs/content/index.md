@@ -24,4 +24,5 @@ Then you can add the focus point property to this class, using the type *Creuna.
 	public virtual PercentageCoordinates FocusPoint { get; set; }
 
 This class contains two properties, X and Y, which are the coordinates of the chosen focus point in percent of the image size.
+  
 See [Example Usage](example.html) for suggestions on how to use the focus point in the frontend.

@@ -7,47 +7,46 @@ body {
   padding: 0;
 }
 
-.fluid-container {
+.demo-fluid-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 50px 0;
 }
 
-.image-container-wide {
+.demo-image-container-wide {
   overflow: hidden;
   width: 40vw;
   height: 20vh;
 }
 
-.image-container-square {
+.demo-image-container-square {
   overflow: hidden;
   width: 20vw;
   height: 20vh;
 }
 
-.image-container-tall {
+.demo-image-container-tall {
   width: 20vw;
   height: 40vh;
 }
 
-.image {
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-}
-
-.image img {
-  min-width: 100%;
-  min-height: 100%;
-  opacity: 0;
-}
-
-.reference {
+.demo-reference {
   width: auto;
   height: auto;
   max-width: 100px;
   max-height: 100px;
 }
 
+.fluid-image {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.fluid-image img {
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0;
+}
