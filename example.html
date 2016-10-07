@@ -65,8 +65,10 @@ An img tag should also be included to maintain accessibility.</p>
 <table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
+<span class="l">4: </span>
 </pre></td>
-<td class="snippet"><pre class="fssnip"><code lang="razor">&lt;div class="fluid-image" style="background-image: url(@Url.ContentUrl(Model)); background-position: @image.X% @image.Y%;"&gt;
+<td class="snippet"><pre class="fssnip"><code lang="razor">&lt;div class="fluid-image" 
+  style="background-image: url(@Url.ContentUrl(Model)); background-position: @image.X% @image.Y%;"&gt;
     &lt;img src="@Url.ContentUrl(Model)" alt="Alt text"&gt;
 &lt;/div&gt;
 </code></pre></td></tr></table>
