@@ -22,7 +22,8 @@ The CSS that is needed to make this work is this:
 Then set the background-position using the *Creuna.FluidImages.PercentageCoordinates*-property in your ImageFile-class:  
 	
 	[lang=razor]
-    <div class="fluid-image" style="background-image: url(@Url.ContentUrl(Model)); background-position: @image.X% @image.Y%;">
+    <div class="fluid-image" 
+		style="background-image: url(@Url.ContentUrl(Model)); background-position: @image.X% @image.Y%;">
         <img src="@Url.ContentUrl(Model)" alt="Alt text">
     </div>
 

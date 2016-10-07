@@ -16,7 +16,7 @@ To use the editor you need to define an image file inheriting from ImageData.
 	[lang=csharp]
 	[ContentType(GUID = "0A89E464-56D4-449F-AEA8-2BF774AB8730")]
     [MediaDescriptor(ExtensionString = "jpg,jpeg,jpe,ico,gif,bmp,png")]
-    public class ImageFile : ImageData, IFileProperties
+    public class ImageFile : ImageData
 
 Then you can add the focus point property to this class, using the type *Creuna.FluidImages.PercentageCoordinates*:
 	

@@ -1,0 +1,12 @@
+﻿.fluid-image {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.fluid-image img {
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0;
+}

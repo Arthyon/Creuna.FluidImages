@@ -1,0 +1,44 @@
+﻿@model Creuna.FluidImages.TestSite.Models.Pages.StartPage
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="nb">
+ <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Model.Name</title>
+    <link rel="stylesheet" href="~/Content/Site.css">
+    <link rel="stylesheet" href="~/Content/FluidImage.css">
+</head>
+<body>
+    @Html.RenderEPiServerQuickNavigator()
+    <main>
+        <div class="demo-fluid-container">
+            <img src="@Url.ContentUrl(Model.Image)" alt="" class="demo-reference">
+            <div class="demo-image-container-wide">
+               @Html.PropertyFor(i => i.Image)
+            </div>
+            <div class="demo-image-container-square">
+                @Html.PropertyFor(i => i.Image)
+            </div>
+            <div class="demo-image-container-tall">
+               @Html.PropertyFor(i => i.Image)
+            </div>
+        </div>
+        <div class="demo-fluid-container">
+            <img src="@Url.ContentUrl(Model.SecondImage)" alt="" class="demo-reference">
+            <div class="demo-image-container-wide">
+                @Html.PropertyFor(i => i.SecondImage)
+            </div>
+            <div class="demo-image-container-square">
+                @Html.PropertyFor(i => i.SecondImage)
+            </div>
+            <div class="demo-image-container-tall">
+                @Html.PropertyFor(i => i.SecondImage)
+            </div>
+        </div>
+    </main>
+</body>
+</html>

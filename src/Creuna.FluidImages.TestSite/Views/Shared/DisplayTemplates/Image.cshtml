@@ -1,0 +1,33 @@
+﻿@using EPiServer.Core
+@using Creuna.FluidImages.TestSite.Models.Media
+@model ContentReference
+
+@if (Model != null)
+{
+    var url = Url.ContentUrl(Model);
+    var currentContent = !ContentReference.IsNullOrEmpty(Model)
+                            ? EPiServer.ServiceLocation.ServiceLocator.Current.GetInstance<EPiServer.IContentLoader>().Get<MediaData>(Model)
+                            : null;
+
+    var image = currentContent as ImageFile;
+    if (image != null)
+    {
+        var x = 50.0;
+        var y = 50.0;
+        if (image.FocusPoint != null)
+        {
+            x = image.FocusPoint.X;
+            y = image.FocusPoint.Y;
+        }
+
+        <div class="fluid-image" style="background-image: url(@Url.ContentUrl(Model)); background-position: @x% @y%;">
+            <img src="@Url.ContentUrl(Model)" alt="@image.AlternateText">
+        </div>
+        <div>@image.Attribution</div>
+    }
+    else
+    {
+        <img src="@Url.ContentUrl(Model)" />
+    }
+}
+

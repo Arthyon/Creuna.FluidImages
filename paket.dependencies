@@ -1,9 +1,16 @@
 source https://nuget.org/api/v2
 source http://nuget.episerver.com/feed/packages.svc/
-
+source ./bin
 
 nuget FSharp.Core redirects: force 
 nuget EPiServer.CMS.Core
+nuget Creuna.FluidImages
+
+group TestSite
+	source https://nuget.org/api/v2
+	source http://nuget.episerver.com/feed/packages.svc/
+
+	nuget EPiServer.CMS
 
 group Build
   source https://nuget.org/api/v2
