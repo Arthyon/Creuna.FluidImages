@@ -69,9 +69,12 @@ then
   run $PAKET_BOOTSTRAPPER_EXE
 fi
 
+if [ ! bin/*.nupkg ]; then
+    run $PAKET_EXE restore group build
+    run $FAKE_EXE init.fsx
+fi
+
 run $PAKET_EXE restore
 
-[ ! -e build.fsx ] && run $PAKET_EXE update
-[ ! -e build.fsx ] && run $FAKE_EXE init.fsx
 run $FAKE_EXE "$@" $FSIARGS $FSIARGS2 build.fsx
 
