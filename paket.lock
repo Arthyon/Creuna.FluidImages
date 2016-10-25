@@ -78,9 +78,9 @@ NUGET
     NuGet.Core (2.7.2)
       Microsoft.Web.Xdt (>= 1.0)
     structuremap.web-signed (3.1.6.191)
-    structuremap-signed (3.1.6.191)
+    structuremap-signed (3.1.9.463)
   remote: ./bin
-    Creuna.FluidImages (0.0.1-beta)
+    Creuna.FluidImages (0.0.2-beta)
       EPiServer.CMS.Core (>= 9.0)
   remote: http://nuget.episerver.com/feed/packages.svc
     EPiServer.CMS (9.12.2)

@@ -8,7 +8,7 @@
     return declare("creuna.editors.ImageFocusPointEditor",
 		[_WidgetBase, _TemplatedMixin, _ContentContextMixin], {
 		    //templateString: dojo.cache('/FocusPointEditor/Index/'),
-		    templateString: '<div class="hotspotseditor-wrapper">  <input type="hidden" class="value" data-dojo-attach-point="focuspoint" /> <div class="image-container" style="display:inline-block;position: relative;cursor: pointer"> <div class="focus" style="border:1px solid white;position:absolute; border-radius:100%; background-color: rgba(255, 0, 255, .5); height:30px;width:30px;transform:translate(-50%, -50%)"></div> <div class="image"><img src="${_currentContext.previewUrl}" style="max-width: 100%;" /></div> </div> </div>',
+		    templateString: '<div class="hotspotseditor-wrapper">  <input type="hidden" class="value" data-dojo-attach-point="focuspoint" /> <button id="resetButton" style="margin: 20px;">Clear focus</button><div class="image-container" style="display:inline-block;position: relative;cursor: pointer"> <div class="focus" style="display:none;border:1px solid white;position:absolute; border-radius:100%; background-color: rgba(255, 0, 255, .5); height:30px;width:30px;transform:translate(-50%, -50%)"></div> <div class="image"><img src="${_currentContext.previewUrl}" style="max-width: 100%;" /></div> </div> </div>',
 
 		    //********************************************************************************
 		    //*PROTOTYPE/PUBLIC FUNCTIONS*****************************************************
@@ -42,14 +42,16 @@
 		    //*PRIVATE OBJECT METHODS ********************************************************
 		    //********************************************************************************
 
-		    /**
-			 * Attach events here
-			 *
-			 * @private
-			 */
 		    _attachEventListeners: function () {
 		        window.addEventListener('resize', this._onWindowResize.bind(this));
 		        this._$image[0].addEventListener('click', this._changeFocusPoint.bind(this));
+		        this._$el.find('#resetButton')[0].addEventListener('click', this._resetFocus.bind(this));
+		    },
+
+		    _resetFocus: function () {
+		        this._updateFocusMarkerPosition(null);
+		        this._updatePropertyValue(null);
+		        return false;
 		    },
 
 		    _waitForImageLoad: function () {
@@ -63,13 +65,7 @@
 		    },
 
 		    _onImageLoaded: function () {
-		        // check if there is something to do
-		        if (typeof (this.value) === 'undefined' || this.value === '') {
-		            return;
-		        }
-
-		        var coordinates = this.value;
-		        this._updateFocusMarkerPosition(coordinates);
+		        this._updateFocusMarkerPosition(this.value);
 		    },
 
 		    _onWindowResize: function () {
@@ -115,16 +111,30 @@
 		    },
 
 		    _updatePropertyValue: function (percent) {
-		        var jsonString = JSON.stringify(percent);
 		        this._set('value', percent);
-		        this.focuspoint.value = percent;
 		        this.onChange(this.value);
+
+		        if (this._isEmptyValue(percent))
+		            return;
+		        var jsonString = JSON.stringify(percent);
+		        this.focuspoint.value = percent;
 		    },
 
 		    _updateFocusMarkerPosition: function (percent) {
+		        if (this._isEmptyValue(percent)) {
+		            this._$marker.css('display', 'none');
+		            return;
+		        }
+
 		        this._$marker
+                    .css('display', 'block')
                     .css('top', percent.y + '%')
                     .css('left', percent.x + '%');
 		    },
+
+		    _isEmptyValue: function (value) {
+		        return value === undefined || value === null || typeof (value) === 'undefined' || value === '';
+
+		    }
 		});
 });
