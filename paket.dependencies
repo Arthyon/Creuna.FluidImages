@@ -3,6 +3,7 @@ source http://nuget.episerver.com/feed/packages.svc/
 
 nuget FSharp.Core redirects: force 
 nuget EPiServer.CMS.Core
+nuget EPiServer.CMS.UI.Core
 
 group TestSite
 	source https://nuget.org/api/v2

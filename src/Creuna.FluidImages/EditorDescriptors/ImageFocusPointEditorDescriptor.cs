@@ -10,7 +10,7 @@ namespace Creuna.FluidImages.EditorDescriptors
     {
         public override void ModifyMetadata(ExtendedMetadata metadata, IEnumerable<Attribute> attributes)
         {
-            ClientEditingClass = "creuna.ImageFocusPointEditor";
+            ClientEditingClass = "creuna/ImageFocusPointEditor";
 
             base.ModifyMetadata(metadata, attributes);
         }

@@ -42,17 +42,17 @@
 		    //*PRIVATE OBJECT METHODS ********************************************************
 		    //********************************************************************************
 
-			_attachEventListeners: function () {
+		    _attachEventListeners: function () {
 		        window.addEventListener('resize', this._onWindowResize.bind(this));
 		        this._$image[0].addEventListener('click', this._changeFocusPoint.bind(this));
-				this._$el.find('#resetButton')[0].addEventListener('click', this._resetFocus.bind(this));
-			},
+		        this._$el.find('#resetButton')[0].addEventListener('click', this._resetFocus.bind(this));
+		    },
 
-			_resetFocus: function(){
-			    this._updateFocusMarkerPosition(null);
-			    this._updatePropertyValue(null);
-			    return false;
-			},
+		    _resetFocus: function () {
+		        this._updateFocusMarkerPosition(null);
+		        this._updatePropertyValue(null);
+		        return false;
+		    },
 
 		    _waitForImageLoad: function () {
 		        // Wait for the image to load before calculating image width and height
