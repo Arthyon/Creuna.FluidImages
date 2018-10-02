@@ -2,7 +2,7 @@
 
 An EPiServer plugin enabling editors to set the focus point of an image.
 
-Documentation: https://arthyon.github.io/Creuna.FluidImages/
+Documentation: https://creuna-oslo.github.io/Creuna.FluidImages/
 
 Run build.cmd or build.sh to set everything up. 
 
